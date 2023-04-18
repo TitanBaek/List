@@ -108,6 +108,51 @@ namespace HomeWork_230418
             return default(T);  // 해당 자료형의 기본값 리턴
         }
 
+        public T? FindLast(Predicate<T> match)
+        {
+            if (match == null)
+                throw new ArgumentNullException("match");
+
+            for (int i = this.arraySize; i >= 0; i--)
+            {
+                if (match(array[i]))
+                {
+                    return array[i];
+                }
+            }
+            return default(T);  // 해당 자료형의 기본값 리턴
+        }
+
+        public int FindLastIndex(Predicate<T> match)
+        {
+            for (int i = this.arraySize; i >= 0 ; i--)
+            {
+                if (match(array[i]))
+                    return i;
+            }
+            return -1;
+        }
+
+        public void Contains()
+        {
+
+        }
+
+        public void Insert(int index, T item)
+        {
+
+        }
+
+        public bool CopyTo(T[] sourceArray)
+        {
+            return false;
+        }
+
+        public bool ToArray(T[] array, int arrayIndex)
+        {
+            return false;
+        }
+
         public void Clear()
         {
             T[] newArray = new T[DefaultCapacity];
