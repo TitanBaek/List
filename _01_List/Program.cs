@@ -1,4 +1,6 @@
-﻿namespace _01_List
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace _01_List
 {
     internal class Program
     {
@@ -88,7 +90,7 @@
             {
                 Console.WriteLine(list[i]);
             }
-
+            
             string? findValue = list.Find(x => x.Contains('4'));
             int findIndex = list.FindIndex(x => x.Contains('1'));
             Console.WriteLine();
