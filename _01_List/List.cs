@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    internal class List<T>
+    internal class List<T> 
     {
         private const int DefaultCapacity = 10;
         private T[] items;
