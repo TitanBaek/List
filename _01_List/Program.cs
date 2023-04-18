@@ -74,7 +74,7 @@
             value = list[2];
             value = list[3];
             value = list[4];
-
+            
             list[0] = "5번 데이터";
             list[1] = "4번 데이터";
             list[2] = "3번 데이터";
@@ -83,9 +83,17 @@
 
             list.Remove("3번 데이터");
             list.Remove("2번 데이터");
+            
+            for(int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(list[i]);
+            }
 
             string? findValue = list.Find(x => x.Contains('4'));
             int findIndex = list.FindIndex(x => x.Contains('1'));
+            Console.WriteLine();
+            Console.WriteLine(findValue);
+            Console.WriteLine(findIndex);
         }
     }
 }
