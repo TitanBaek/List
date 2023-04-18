@@ -1,6 +1,6 @@
 ﻿namespace Day15_Algorithm
 {
-    internal class Program
+    internal class Program 
     {
         /******************************************************
 		 * 알고리즘 (Algorithm)
