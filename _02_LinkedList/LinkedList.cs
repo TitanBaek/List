@@ -75,13 +75,47 @@ namespace DataStructure
                 head = newNode;
                 tail = newNode;
             }
-
+            count++;
             return newNode;
         }
 
-        /*
         public LinkedListNode<T> AddLast(T item)
         {
+            LinkedListNode<T> newNode = new LinkedListNode<T>(this,item);
+            if(tail != null)
+            {
+                newNode.prev = tail;
+                tail.next = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                head = newNode;
+                tail = newNode;
+            }
+            count++;
+            return newNode;
+        }
+
+        public void Remove(LinkedListNode<T> node)
+        {
+            // 1. 연결구조 바꾸기
+            // 2. 실제 노드 삭제
+        }
+
+        /*
+        public LinkedListNode<T> AddBefore (LinkedListNode<T> targetNode, T item)
+        {
+            LinkedListNode<T> newNode = new LinkedListNode<T>(this, item);
+            // targetNode 의 prev,next 를 가져와야함
+            // targetNode 의 prev 주소값의 녀석의 Next를 newNode로 해주고
+            // targetNode 의 prev 주소값을 newNode로 한다.
+
+        }
+
+        public LinkedListNode<T> AddAfter (LinkedListNode<T> targetNode, T item)
+        {
+            LinkedListNode<T> newNode = new LinkedListNode<T>(this, item);
 
         }
         */
