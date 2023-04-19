@@ -93,8 +93,8 @@ namespace DataStructure
             else
             {
                 head = newNode;
-                tail = newNode;
             }
+                tail = newNode;
             count++;
             return newNode;
         }
@@ -136,7 +136,8 @@ namespace DataStructure
         public LinkedListNode<T> Find(T value)
         {
             LinkedListNode<T> target = head;
-            EqualityComparer<T> compare = EqualityComparer<T>.Default; // 일반화 '똑같은지' 비교하는거
+            EqualityComparer<T> compare = EqualityComparer<T>.Default; // 일반화 '똑같은지' 비교하는거, 값형식 창조형식 모두 비교 가능
+                while (target != null) { }                             // 오브젝트에 == 는 주소 값을 비교하기 때문에 적절하지 않음
             while(target != null)
             {
                 if (compare.Equals(value,target.Value))
@@ -154,7 +155,7 @@ namespace DataStructure
         public LinkedListNode<T> AddBefore (LinkedListNode<T> node, T item)
         {
             // 0. 예외처리
-            if(node.list == this)
+            if(node.list != this)
                 throw new ArgumentNullException(nameof(node));
             if(node == null)
                 throw new ArgumentNullException(nameof(node));
@@ -183,7 +184,7 @@ namespace DataStructure
         public LinkedListNode<T> AddAfter (LinkedListNode<T> node, T item)
         {
             // 0. 예외처리
-            if (node.list == this)
+            if (node.list != this)
                 throw new ArgumentNullException(nameof(node));
             if (node == null)
                 throw new ArgumentNullException(nameof(node));

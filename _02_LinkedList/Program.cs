@@ -72,7 +72,20 @@
 
         static void Main(string[] args)
         {
-            LinkedList();
+            DataStructure.LinkedList<int> myLinked = new DataStructure.LinkedList<int>();
+
+            myLinked.AddFirst(0);
+            myLinked.AddFirst(1);
+            myLinked.AddFirst(2);
+            myLinked.AddFirst(3);
+
+            myLinked.Remove(2);
+
+            while (myLinked.head != null)
+            {
+                
+            }
+
         }
     }
 }
