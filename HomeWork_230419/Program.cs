@@ -4,7 +4,17 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            LinkedList<string> myLinked = new LinkedList<string>();
+            myLinked.AddFirst("a");
+
+            LinkedListNode<string> myNode = myLinked.Find("a");
+
+            Console.WriteLine(myNode.Value);
+
+            myLinked.AddAfter(myNode, "어흑마이깟!!!");
+
+            Console.WriteLine(myNode.next.Value);
+
         }
     }
 }
