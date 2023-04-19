@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DataStructure
 {
@@ -99,26 +101,114 @@ namespace DataStructure
 
         public void Remove(LinkedListNode<T> node)
         {
+            // 예외처리
+            if(node.list != this)                               // 노드가 연결리스트에 포함된 노드가 아닌경우
+                throw new InvalidOperationException();
+            if (node == null)                                   // 노드가 Null인 경우
+                throw new ArgumentNullException(nameof(node));
+
+            // 0. 삭제 시 head 나 tail이 변경되는 경우
+            if (head == node)
+                head = node.next;
+            if(tail == node)
+                tail = node.prev;
+
             // 1. 연결구조 바꾸기
+            if(node.prev != null)
+                node.prev.next = node.next;
+            if(node.next != null)
+                node.next.prev = node.prev;
             // 2. 실제 노드 삭제
+            count--;
         }
 
-        /*
-        public LinkedListNode<T> AddBefore (LinkedListNode<T> targetNode, T item)
+        public bool Remove(T value)
         {
-            LinkedListNode<T> newNode = new LinkedListNode<T>(this, item);
-            // targetNode 의 prev,next 를 가져와야함
-            // targetNode 의 prev 주소값의 녀석의 Next를 newNode로 해주고
-            // targetNode 의 prev 주소값을 newNode로 한다.
-
+            LinkedListNode<T> findNode = Find(value); // 찾는 노드
+            if(findNode != null)
+            {
+                Remove(findNode);
+                return true;
+            }
+            return false;
         }
 
-        public LinkedListNode<T> AddAfter (LinkedListNode<T> targetNode, T item)
+        public LinkedListNode<T> Find(T value)
         {
-            LinkedListNode<T> newNode = new LinkedListNode<T>(this, item);
+            LinkedListNode<T> target = head;
+            EqualityComparer<T> compare = EqualityComparer<T>.Default; // 일반화 '똑같은지' 비교하는거
+            while(target != null)
+            {
+                if (compare.Equals(value,target.Value))
+                {
+                    return target;
+                } else
+                {
+                    target = target.next;
+                }
+            }
+            return null;
+        }
+
+        
+        public LinkedListNode<T> AddBefore (LinkedListNode<T> node, T item)
+        {
+            // 0. 예외처리
+            if(node.list == this)
+                throw new ArgumentNullException(nameof(node));
+            if(node == null)
+                throw new ArgumentNullException(nameof(node));
+
+            // 1. 새로운 노드
+            LinkedListNode<T> newNode = new LinkedListNode<T>(this,node.prev, node, item);
+
+            // 2. 연결구조
+            if (node.prev != null)
+            {
+                node.prev.next = newNode;
+            }
+            else
+            {
+                this.head = newNode;
+            }
+
+            node.prev = newNode;
+
+            // 3. 갯수 증가
+            count++;
+
+            return newNode;
+        }
+        
+        public LinkedListNode<T> AddAfter (LinkedListNode<T> node, T item)
+        {
+            // 0. 예외처리
+            if (node.list == this)
+                throw new ArgumentNullException(nameof(node));
+            if (node == null)
+                throw new ArgumentNullException(nameof(node));
+
+            // 1. 새로운 노드
+            LinkedListNode<T> newNode = new LinkedListNode<T>(this, node, node.next, item);
+
+            // 2. 연결구조
+            if (node.next != null)
+            {
+                node.next.prev = newNode;
+            }
+            else
+            {
+                this.tail = newNode;
+            }
+
+            node.next = newNode;
+
+            // 3. 갯수 증가
+            count++;
+
+            return newNode;
 
         }
-        */
 
     }
 }
