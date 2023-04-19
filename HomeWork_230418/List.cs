@@ -25,12 +25,12 @@ namespace HomeWork_230418
         {
             get {
                 if (index < 0 || index > this.arraySize)
-                    throw new IndexOutOfRangeException();
+                    throw new ArgumentOutOfRangeException();
                 return array[index]; 
             }
             set {
                 if (index < 0 || index > this.arraySize)
-                    throw new IndexOutOfRangeException();
+                    throw new ArgumentOutOfRangeException();
                 array[index] = value;
             }
         }

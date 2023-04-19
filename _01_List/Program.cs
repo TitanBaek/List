@@ -37,7 +37,7 @@ namespace _01_List
         // <List의 사용>
         void List()
         {
-            List<string> list = new List<string>();
+            DataStructure.List<string> list = new DataStructure.List<string>();
 
             // 배열 요소 삽입
             list.Add("0번 데이터");
