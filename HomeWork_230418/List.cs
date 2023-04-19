@@ -24,12 +24,12 @@ namespace HomeWork_230418
         public T this[int index]                            // Indexer
         {
             get {
-                if (index < 0 || index >= this.arraySize)
+                if (index < 0 || index > this.arraySize)
                     throw new IndexOutOfRangeException();
                 return array[index]; 
             }
             set {
-                if (index < 0 || index >= this.arraySize)
+                if (index < 0 || index > this.arraySize)
                     throw new IndexOutOfRangeException();
                 array[index] = value;
             }
@@ -70,6 +70,7 @@ namespace HomeWork_230418
                 return true;
             }
             return false;
+
         }
 
         public int IndexOf(T item)
@@ -89,6 +90,7 @@ namespace HomeWork_230418
             //            @
             //    (소스배열 , 잘라올 인덱스 위치 , 덮어쓸 배열, 덮어쓸 위치, 덮어쓸 자료의 양)
             Array.Copy(this.array, index+1, this.array,index, this.arraySize - index);
+
         }
 
         public int FindIndex(Predicate<T> match)
@@ -99,6 +101,7 @@ namespace HomeWork_230418
                     return i;
             }
             return -1;
+
         }
 
         public T? Find(Predicate<T> match)
@@ -114,6 +117,7 @@ namespace HomeWork_230418
                 }
             }
             return default(T);  // 해당 자료형의 기본값 리턴
+
         }
 
         public T? FindLast(Predicate<T> match)
@@ -129,6 +133,7 @@ namespace HomeWork_230418
                 }
             }
             return default(T);  // 해당 자료형의 기본값 리턴
+
         }
 
         public int FindLastIndex(Predicate<T> match)
@@ -139,6 +144,7 @@ namespace HomeWork_230418
                     return i;
             }
             return -1;
+
         }
 
 
@@ -162,6 +168,7 @@ namespace HomeWork_230418
         {
             T[] newArray = new T[DefaultCapacity];
             this.array = newArray;
+
         }
 
     }
