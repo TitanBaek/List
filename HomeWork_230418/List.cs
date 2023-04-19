@@ -18,13 +18,21 @@ namespace HomeWork_230418
         private int arraySize;
         private int DefaultCapacity = 10;
         private T[] array;
-        public int Count { get { return array.Length; } }   // Count getter & setter
-        public int Capacity { get { return Capacity; } }    // Capacity getter & setter
+        public int Count { get { return arraySize; } }   // Count getter & setter
+        public int Capacity { get { return this.array.Length; } }    // Capacity getter & setter
         
         public T this[int index]                            // Indexer
         {
-            get { return array[index]; }
-            set { array[index] = value; }
+            get {
+                if (index < 0 || index >= this.arraySize)
+                    throw new IndexOutOfRangeException();
+                return array[index]; 
+            }
+            set {
+                if (index < 0 || index >= this.arraySize)
+                    throw new IndexOutOfRangeException();
+                array[index] = value;
+            }
         }
 
         public List()
@@ -35,7 +43,7 @@ namespace HomeWork_230418
 
         public void Add(T item)
         {
-            if(this.arraySize <  DefaultCapacity)
+            if(this.arraySize < Capacity)
             {
                 array[this.arraySize++] = item;
             } else
@@ -47,7 +55,7 @@ namespace HomeWork_230418
 
         public void UpgradeArray()
         {
-            int Capacity = this.Capacity * 2;
+            int Capacity = this.array.Length * 2;
             T[] newArray = new T[Capacity];
             Array.Copy(this.array, 0, newArray, 0, this.arraySize);
             this.array = newArray;
@@ -61,6 +69,7 @@ namespace HomeWork_230418
                 RemoveAt(itemIndex);
                 return true;
             }
+            Console.WriteLine("false");
             return false;
         }
 
@@ -140,6 +149,19 @@ namespace HomeWork_230418
 
         public void Insert(int index, T item)
         {
+            if(index < 0 || index > this.arraySize) 
+                throw new ArgumentOutOfRangeException("index");
+
+            this.arraySize++;
+            if (this.arraySize > this.Capacity)
+            {
+                UpgradeArray();
+            }
+
+            T[] SourceArray = new T[] { item };
+
+            Array.Copy(this.array, index, this.array, index+1, this.arraySize - index);
+            Array.Copy(SourceArray,0,this.array,index,1);
 
         }
 

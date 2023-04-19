@@ -11,7 +11,27 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            HomeWork_230418.List<string> myList = new HomeWork_230418.List<string>();
+
+            myList.Add("1번 데이터");
+            myList.Add("2번 데이터");
+            myList.Add("3번 데이터");
+            myList.Add("4번 데이터");
+            myList.Add("5번 데이터");
+
+            myList.Insert(3, "New 4번 데이터");
+                
+            for(int i = 0; i < myList.Count ; i++) {
+                Console.WriteLine(myList[i]);
+            }
+            Console.WriteLine();
+            myList.Remove("3번 데이터");
+
+            for (int i = 0; i < myList.Count; i++)
+            {
+                Console.WriteLine(myList[i]);
+            }
+
         }
     }
 }
