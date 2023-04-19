@@ -69,7 +69,6 @@ namespace HomeWork_230418
                 RemoveAt(itemIndex);
                 return true;
             }
-            Console.WriteLine("false");
             return false;
         }
 
@@ -142,10 +141,6 @@ namespace HomeWork_230418
             return -1;
         }
 
-        public void Contains()
-        {
-
-        }
 
         public void Insert(int index, T item)
         {
@@ -165,15 +160,6 @@ namespace HomeWork_230418
 
         }
 
-        public bool CopyTo(T[] sourceArray)
-        {
-            return false;
-        }
-
-        public bool ToArray(T[] array, int arrayIndex)
-        {
-            return false;
-        }
 
         public void Clear()
         {
