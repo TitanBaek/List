@@ -13,6 +13,7 @@ namespace HomeWork_230419
         internal LinkedList<T> list;
         private T item;
 
+        public T Value { get { return item; } }
         public LinkedListNode<T> Next { get { return next; } }
         public LinkedListNode<T> Prev { get { return prev; } }
         public LinkedList<T> List { get { return list; } }
@@ -56,16 +57,18 @@ namespace HomeWork_230419
         public LinkedListNode<T> AddFirst(T item)
         {
             LinkedListNode<T> newNode = new LinkedListNode<T> (this,item);       // 새노드생성
-            if (head != null)                                               // head가 안 비어있다.
+            if (this.head != null)                                               // head가 안 비어있다.
             {
-                newNode.next = head;                                        // newNode의 next 는 구)head
-                head.prev = newNode;                                        // 이제 앞으로 밀려나니까 구)head의 prev는 newNode
+                newNode.next = this.head;                                        // newNode의 next 는 구)head
+                this.head.prev = newNode;                                        // 이제 앞으로 밀려나니까 구)head의 prev는 newNode
             
             } else                                                          // head가 비어있다. 즉 최초로 값을 넣는 경우
             {
-                tail = newNode;                                             // LinkedList는 비어있었으니 head와 tail는 newNode다
+                this.tail = newNode;                                             // LinkedList는 비어있었으니 head와 tail는 newNode다
             }
-            head = newNode;                                                 // 위 조건문에 head = newNode는 무조건 들어가기 때문에 조건문 밖으로 빼줬음.
+            this.head = newNode;                                                 // 위 조건문에 head = newNode는 무조건 들어가기 때문에 조건문 밖으로 빼줬음.
+
+            this.count++;
 
             return newNode;
                 
@@ -75,16 +78,18 @@ namespace HomeWork_230419
         public LinkedListNode<T> AddLast(T item)
         {
             LinkedListNode<T> newNode = new LinkedListNode<T>(this,item);        // 새노드 생성
-            if (tail != null)                                               // tail이 안 비어있다.
+            if (this.tail != null)                                               // tail이 안 비어있다.
             {
-                newNode.prev = tail;                                        // newNode의 prev는 구)tail
-                tail.next = newNode;                                        // 구)tail의 next는 newNode
+                newNode.prev = this.tail;                                        // newNode의 prev는 구)tail
+                this.tail.next = newNode;                                        // 구)tail의 next는 newNode
             }
             else                                                            // tail이 비어있다.
             {
-                head = newNode;                                             // LinkedList는 비어있었으니 head와 tail은 newNode다.
+                this.head = newNode;                                             // LinkedList는 비어있었으니 head와 tail은 newNode다.
             }
-            tail = newNode;                                                 // 위 조건문에 tail = newNode가 무조건 들어가니 조건문 밖으로 빼줬음.
+            this.tail = newNode;                                                 // 위 조건문에 tail = newNode가 무조건 들어가니 조건문 밖으로 빼줬음.
+
+            this.count++;
 
             return newNode;                                                 // 반환 newNode
         }
@@ -94,7 +99,7 @@ namespace HomeWork_230419
             
             if(targetNode.list != this || targetNode == null)               // 예외처리  - 전달 받은 targetNode가 현재의 LinkedList에 없는 경우 || targetNode가 null 인 경우
             {
-                throw new ArgumentNullException(nameof(targetNode));        // 예외처리 날려버리기
+                throw new ArgumentNullException(nameof(targetNode));        // 예외상황 발생
             }
             LinkedListNode<T> newNode = new LinkedListNode<T> (this, targetNode.prev, targetNode, item); // newNode 생성
 
@@ -106,9 +111,11 @@ namespace HomeWork_230419
             }
             else                                                            // targetNode의 Prev이 null 이다, 즉 targetNode가 head 다.
             {
-                head = newNode;                                             // head를 newNode로 바꿔준다.
+                this.head = newNode;                                             // head를 newNode로 바꿔준다.
             }
             targetNode.prev = newNode;                                      // targetNode의 Prev을 newNode로 바꿔준다.
+            
+            this.count++;
 
             return newNode;                                                 // newNode 반환
         }
@@ -117,7 +124,7 @@ namespace HomeWork_230419
         {
             if (targetNode.list != this || targetNode == null)               // 예외처리  - 전달 받은 targetNode가 현재의 LinkedList에 없는 경우 || targetNode가 null 인 경우
             {
-                throw new ArgumentNullException(nameof(targetNode));        // 예외처리 날려버리기
+                throw new ArgumentNullException(nameof(targetNode));        // 예외상황 발생
             }
 
             LinkedListNode<T> newNode = new LinkedListNode<T>(this, targetNode, targetNode.next, item); // newNode 생성
@@ -130,41 +137,118 @@ namespace HomeWork_230419
             }
             else                                                            // targetNode의 next이 null 이다, 즉 targetNode가 tail 이다.
             {
-                tail = newNode;                                             // tail를 newNode로 바꿔준다.
+                this.tail = newNode;                                             // tail를 newNode로 바꿔준다.
             }
             targetNode.next = newNode;                                      // targetNode의 next를 newNode로 바꿔준다.
+
+            this.count++;
 
             return newNode;                                                 // newNode 반환
         }
 
         public LinkedListNode<T> Find(T item)
         {
+            LinkedListNode<T> target = this.head;                                // '처음'부터 찾아줄거니까 target에 head를 넣고
+            EqualityComparer<T> comparer = EqualityComparer<T>.Default;     // 비교를 위한 comparer 
 
+            while(target != null)                                           // target 이 null이 아닌동안 동작하는 while ON
+            {
+                if (comparer.Equals(target.Value, item))                    // target의 Value(item)과 item이 같다면 
+                {
+                    return target;                                          // target을 반환해주고
+                } else
+                {
+                    target = target.next;                                   // 다르다면 target을 target.next(다음 노드)로 !
+                }
+            }
+
+            return null;                                                    // item의 값을 가진 Node가 없었기에 null을 반환
         }
         
         public LinkedListNode<T> FindLast(T item)
         {
+            LinkedListNode<T> target = this.tail;                                // '끝'에서 부터 찾아줄거니까 target에 tail를 넣고
+            EqualityComparer<T> comparer = EqualityComparer<T>.Default;     // 비교를 위한 comparer 
 
+            while (target != null)                                           // target 이 null이 아닌동안 동작하는 while ON
+            {
+                if (comparer.Equals(target.Value, item))                    // target의 Value(item)과 item이 같다면 
+                {
+                    return target;                                          // target을 반환해주고
+                }
+                else
+                {
+                    target = target.prev;                                   // 다르다면 target을 target.prev(이전 노드)로 !
+                }
+            }
+
+            return null;                                                    // item의 값을 가진 Node가 없었기에 null을 반환
         }
 
-        public LinkedListNode<T> Remove(T item)
+        public bool Remove(T item)
         {
+            LinkedListNode<T> findNode = Find(item);                        // Find 에서 해당 item 값의 노드를 찾아보고
+            if(findNode != null)                                            // 해당 값으로 노드가 존재하면
+            {
+                Remove(findNode);                                           // 매개변수를 LinkedListNode로 하는 Remove 함수 호출
+                return true;                                                // True 반환
+            }
 
+            return false;                                                   // 해당 값을 가진 Node를 찾지 못하여 삭제가 이뤄지지 않았으므로 false 반환
         }
 
-        public LinkedListNode<T> Remove(LinkedListNode<T> node)
+        public void Remove(LinkedListNode<T> node)
         {
+            if(node.list != this || node == null)                           // 예외처리 Node가 현재의 LinkedList에 없거나 Null 인 경우 
+            {
+                throw new ArgumentNullException(nameof(node));              // 예외상황 발생
+            }
 
+            if (node == this.head)                                               // node 가 head 였다?
+                this.head = node.next;                                           // head 는 이제 node의 next 다.
+            if (node == this.tail)                                               // node 가 tail 이였다.
+                this.tail = node.prev;                                           // tail 은 이제 node의 prev다.
+
+            if (node.prev != null)                                          // node의 prev가 존재할 때
+                node.prev.next = node.next;                                 // 이제 node의 prev의 next는 node의 next다.
+            if (node.next != null)                                          // node의 next가 존재할 때
+                node.next.prev = node.prev;                                 // 이제 node의 next의 prev는 node의 prev다.
+
+            this.count--;
         }
 
-        public LinkedListNode<T> RemoveFirst(T value)
-        {
 
+        /// <summary>
+        /// Remove(this.head) 한 줄이면 구현 가능하지만.. 그래도 써봤습니다...
+        /// </summary>
+        /// <exception cref="ArgumentNullException"></exception>
+        public void RemoveFirst()
+        {
+            if (this.head == null)                                          // head 가 없는데 이 함수를 불러왔다? 
+                throw new ArgumentNullException();                          // 바로 예외상황 날려버리기
+
+            this.head.next.prev = null;                                     // head의 바로 다음 Node의 prev을 없애주고
+            this.head = this.head.next;                                     // head를 이제 head.next로 바꿔준다.
+
+            count--;                                                        // 카운트 차감
         }
 
-        public LinkedListNode <T> RemoveLast(T value)
+        public void RemoveLast()
         {
+            if (this.tail == null)                                          // tail이 없는데 이 함수를 불러왔다? 
+                throw new ArgumentNullException();                          // 바로 예외상황 날려버리기
 
+            this.tail.prev.next = null;                                     // tail의 바로 이전 Node의 next를 없애주고
+            this.tail = this.tail.prev;                                     // tail을 이제 tail.prev로 바꿔준다.
+
+            count--;                                                        // 카운트 차감
+        }
+
+        public bool Contains(T value)                                       
+        {
+            if(Find(value) != null)                                         // Find 함수를 호출하여 Node가 넘어온다면
+                return true;                                                // True 반환
+            return false;                                                   // 아니라면 False 반환
         }
     }
 }
