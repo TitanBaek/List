@@ -152,11 +152,8 @@ namespace HomeWork_230418
             {
                 UpgradeArray();
             }
-
-            T[] SourceArray = new T[] { item };
-
             Array.Copy(this.array, index, this.array, index+1, this.arraySize - index);
-            Array.Copy(SourceArray,0,this.array,index,1);
+            this.array[index] = item;
 
         }
 
