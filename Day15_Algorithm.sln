@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230419", "HomeWork
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03_Iterator", "_03_Iterator\_03_Iterator.csproj", "{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_230420", "HomeWork_230420\HomeWork_230420.csproj", "{D60F8A86-D885-4169-AF24-277EA6A4A043}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60F8A86-D885-4169-AF24-277EA6A4A043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60F8A86-D885-4169-AF24-277EA6A4A043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60F8A86-D885-4169-AF24-277EA6A4A043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60F8A86-D885-4169-AF24-277EA6A4A043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
