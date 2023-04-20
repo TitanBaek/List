@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_01_List", "_01_List\_01_Li
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230418", "HomeWork_230418\HomeWork_230418.csproj", "{82F62A55-9158-47C8-AAAF-80466D29323A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_02_LinkedList", "_02_LinkedList\_02_LinkedList.csproj", "{56C24261-F4D2-41FB-97F8-AF6EB380CC79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_02_LinkedList", "_02_LinkedList\_02_LinkedList.csproj", "{56C24261-F4D2-41FB-97F8-AF6EB380CC79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_230419", "HomeWork_230419\HomeWork_230419.csproj", "{C12A79E3-D9E4-4F75-801D-ED141D50427D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230419", "HomeWork_230419\HomeWork_230419.csproj", "{C12A79E3-D9E4-4F75-801D-ED141D50427D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03_Iterator", "_03_Iterator\_03_Iterator.csproj", "{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C12A79E3-D9E4-4F75-801D-ED141D50427D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C12A79E3-D9E4-4F75-801D-ED141D50427D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C12A79E3-D9E4-4F75-801D-ED141D50427D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

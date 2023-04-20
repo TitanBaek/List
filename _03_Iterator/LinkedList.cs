@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructure
+namespace _03_Iterator
 {
     public class LinkedListNode<T> : IEnumerable<T>
     {
@@ -54,7 +54,7 @@ namespace DataStructure
         }
     }
 
-    public class LinkedList<T>
+    public class LinkedList<T> : IEnumerable<T>
     {
         private int count = 0;
         private LinkedListNode<T> head;
@@ -261,6 +261,56 @@ namespace DataStructure
             if (Find(value) != null)                                         // Find 함수를 호출하여 Node가 넘어온다면
                 return true;                                                // True 반환
             return false;                                                   // 아니라면 False 반환
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new Enumerator(this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return new Enumerator(this);
+        }
+
+
+        public struct Enumerator : IEnumerator<T>
+        {
+            private LinkedList<T> linkedList;
+            private LinkedListNode<T> node;
+            private T current;
+            public T Current { get { return current; } }
+            object IEnumerator.Current { get { return current;  } }
+
+            public Enumerator(LinkedList<T> list)
+            {
+                this.linkedList = list;
+                this.node = list.head;
+                this.current = default(T);
+            }
+
+            public void Dispose()
+            {
+                //throw new NotImplementedException();
+            }
+
+            public bool MoveNext()
+            {
+                if(node != null)
+                {
+                    current = node.Value;
+                    node = node.next;
+                    return true;
+                }
+                this.current = default(T);
+                return false;
+            }
+
+            public void Reset()
+            {
+                this.node = this.linkedList.head;
+                this.current = default(T);
+            }
         }
     }
 }

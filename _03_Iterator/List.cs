@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructure
+namespace _03_Iterator
 {
     /*
      *  1. 선형리스트 구현 - msdn C#의 List 참고
@@ -25,13 +26,13 @@ namespace DataStructure
         {
             get
             {
-                if (index < 0 || index > this.arraySize)
+                if (index < 0 || index >= this.arraySize)
                     throw new ArgumentOutOfRangeException();
                 return array[index];
             }
             set
             {
-                if (index < 0 || index > this.arraySize)
+                if (index < 0 || index >= this.arraySize)
                     throw new ArgumentOutOfRangeException();
                 array[index] = value;
             }
@@ -45,15 +46,10 @@ namespace DataStructure
 
         public void Add(T item)
         {
-            if (this.arraySize < Capacity)
-            {
-                array[this.arraySize++] = item;
-            }
-            else
-            {
+            if (this.arraySize >= this.array.Length)
                 UpgradeArray();
-                array[this.arraySize++] = item;
-            }
+
+            this.array[this.arraySize++] = item;
         }
 
         public void UpgradeArray()
@@ -174,6 +170,8 @@ namespace DataStructure
 
         }
 
+
+
         public IEnumerator<T> GetEnumerator()
         {
             return new Enumerator(this);
@@ -184,20 +182,24 @@ namespace DataStructure
             return new Enumerator(this);
         }
 
+        
+
+
         public struct Enumerator : IEnumerator<T>
         {
-            private List<T> list;
+            private List<T> list; 
             private int index;
             private T current;
-            public T Current { get { return list[index]; } }
-            object IEnumerator.Current => throw new NotImplementedException();
+            public T Current { get { return current; } }
+            object IEnumerator.Current{ get {  return current;  }  }
 
             public Enumerator(List<T> list)
             {
                 this.list = list;
-                this.index = -1;
+                this.index = 0;
                 this.current = default(T);
             }
+
             public void Dispose()
             {
                 // 무시.
@@ -205,18 +207,18 @@ namespace DataStructure
 
             public bool MoveNext()
             {
-                if (index < list.Count - 1)
+                if (index < list.Count)
                 {
-                    current = list[++index];
+                    current = list[index++];            // 후위증가 컨셉 MoveNext
                     return true;
                 }
                 current = default(T);
-                    return false;
+                return false;
             }
 
             public void Reset()
             {
-                this.index = -1;
+                this.index = 0;
                 this.current = default(T);
             }
         }

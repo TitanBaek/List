@@ -10,6 +10,7 @@ namespace _03_Iterator
 		 * 
 		 * 자료구조에 저장되어 있는 요소들을 순회하는 인터페이스
 		 ******************************************************/
+        /*
         public void Test1()
         {
             // 대부분의 자료구조가 반복기를 지원함
@@ -78,17 +79,45 @@ namespace _03_Iterator
             yield return 4;
 
         }
-
+        */
 
         static void Main(string[] args)
         {
-            DataStructure.List<int> list = new DataStructure.List<int>();
-            for (int i = 1; i <= 5; i++) list.Add(i);
+            /*
+            _03_Iterator.List<int> list = new _03_Iterator.List<int>();
+            for (int i = 1; i <= 10; i++) list.Add(i);
 
-            foreach(int i in list){
-                Console.WriteLine(i);
+            IEnumerator<int> iter = list.GetEnumerator();            
+            Console.WriteLine(iter.Current);
+
+            foreach(int i in list) Console.WriteLine(i);
+            Console.WriteLine();
+            while (iter.MoveNext())
+            {
+                Console.WriteLine(iter.Current);
             }
 
+            Stack<int> stack = new Stack<int>();
+            */
+
+            _03_Iterator.LinkedList<int> myLinked = new _03_Iterator.LinkedList<int>();
+            for(int i = 1; i <= 10; i++)
+            {
+                myLinked.AddLast(i);
+            }
+
+            IEnumerator<int> myEnumerator = myLinked.GetEnumerator();
+
+            while(myEnumerator.MoveNext())
+            {
+                Console.WriteLine(myEnumerator.Current);
+            }
+            /*
+            foreach(int i in myLinked)
+            {
+                Console.WriteLine(i);
+            }
+            */
         }
     }
 }

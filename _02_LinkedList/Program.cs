@@ -81,10 +81,6 @@
 
             myLinked.Remove(2);
 
-            while (myLinked.head != null)
-            {
-                
-            }
 
         }
     }

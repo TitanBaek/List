@@ -104,7 +104,7 @@ namespace DataStructure
             // 예외처리
             if(node.list != this)                               // 노드가 연결리스트에 포함된 노드가 아닌경우
                 throw new InvalidOperationException();
-            if (node == null)                                   // 노드가 Null인 경우
+            if(node == null)                                   // 노드가 Null인 경우
                 throw new ArgumentNullException(nameof(node));
 
             // 0. 삭제 시 head 나 tail이 변경되는 경우
