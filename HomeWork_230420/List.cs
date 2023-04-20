@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeWork_230420
+namespace HomeWork_2304201
 {
     /*
      *  1. 선형리스트 구현 - msdn C#의 List 참고
