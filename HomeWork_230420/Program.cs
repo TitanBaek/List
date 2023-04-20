@@ -1,11 +1,13 @@
-﻿namespace HomeWork_230420
+﻿using HomeWork_230420;
+
+namespace HomeWork_230420
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("LinkedList :");
-            HomeWork_230420.LinkedList<string> myLinked = new HomeWork_230420.LinkedList<string>();
+            LinkedList<string> myLinked = new LinkedList<string>();
 
             myLinked.AddLast("Hello");
             myLinked.AddLast("How");
@@ -20,7 +22,7 @@
             Console.WriteLine();
             Console.WriteLine("List :");
 
-            HomeWork_2304201.List<string> list = new HomeWork_2304201.List<string>();
+            List<string> list = new List<string>();
             list.Add("안녕하세요.");
             list.Add("뭘봐요.");
             list.Add("내 맘이야");
@@ -33,7 +35,7 @@
             Console.WriteLine();
             Console.WriteLine("Sort:");
 
-            HomeWork_230420.LinkedList<int> myLinked2 = new HomeWork_230420.LinkedList<int>();
+            LinkedList<int> myLinked2 = new LinkedList<int>();
             myLinked2.AddLast(1);
             myLinked2.AddLast(8);
             myLinked2.AddLast(97);
@@ -50,15 +52,9 @@
             myList2.Add(441);
             myList2.Add(51);
 
-            List<int> list2 = new List<int>();
-
-            HomeWork_230420.Sort.Generic_Sort<int>(myList2,HomeWork_230420.Sort.G_AsendCompare);
-
-            foreach (int i in myLinked2)
-            {
-                Console.WriteLine(i);
-            }
-
+            Sort.Generic_Sort<int>(myList2, Sort.G_AsendCompare);
+            Console.WriteLine();
+            Console.WriteLine();
         }
     }
 }

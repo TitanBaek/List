@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace HomeWork_230420
 {
-    public class Sort 
+    public class Sort
     {
-        public delegate int G_Compare<T>(T x, T y); 
+        public delegate int G_Compare<T>(T x, T y);
 
-        public static void Generic_Sort<T>(IList<T> iArray,G_Compare<T> comapre) where T : IComparable<T>
+        public static void Generic_Sort<T>(IList<T> iArray, G_Compare<T> comapre) where T : IComparable<T>
         {
             for (int i = 0; i < iArray.Count; i++)
             {
@@ -25,12 +25,9 @@ namespace HomeWork_230420
                         iArray[j] = temp;
                     }
                 }
+                Console.Write($"{iArray[i]}  ");
             }
 
-            foreach(T i in iArray)
-            {
-                Console.WriteLine(i);
-            }
             
         }
 
