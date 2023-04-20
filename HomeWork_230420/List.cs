@@ -203,7 +203,7 @@ namespace HomeWork_230420
 
             public void Dispose()                                               // 무시
             {
-                throw new NotImplementedException();
+                //throw new NotImplementedException();
             }
 
             public bool MoveNext()                                              // 반복기에서 호출되는 함수
