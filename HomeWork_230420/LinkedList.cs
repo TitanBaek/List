@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,7 +45,7 @@ namespace HomeWork_230420
 
     }
 
-    public class LinkedList<T>
+    public class LinkedList<T> : IEnumerable<T>
     {
         private int count = 0;
         private LinkedListNode<T> head;
@@ -251,6 +252,61 @@ namespace HomeWork_230420
             if (Find(value) != null)                                         // Find 함수를 호출하여 Node가 넘어온다면
                 return true;                                                // True 반환
             return false;                                                   // 아니라면 False 반환
+        }
+
+
+        // LinkedList에 Enumerable 구현
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new Enumerator(this);                                                // Enumerator 반환
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return new Enumerator(this);                                                // Enumerator 반환
+        }
+
+
+        public struct Enumerator : IEnumerator<T>                                       // IEnumerator 인터페이스의 Enumerator 구조체
+        {
+            private LinkedList<T> list;                                                 // LinkedList
+            private LinkedListNode<T> node;                                             // LinkedList의 Node
+            private T current;                                                          // 현재 Node의 값
+            public T Current { get { return current; } }                                // current Getter
+
+            object IEnumerator.Current { get { return current; } }
+
+            public Enumerator (LinkedList<T> list)                                      // 생성자
+            {
+                this.list = list;                                                       // 매개변수로 받은 LinkedList를 this.list로
+                this.node = list.head;                                                  // this.list의 head를 node로
+                this.current = default(T);                                              // current 값 초기화
+            }
+
+            public void Dispose()
+            {
+                //
+            }
+
+            public bool MoveNext()
+            {
+                if(this.node != null)
+                {
+                    this.current = this.node.Value;
+                    this.node = this.node.next;
+                    return true;
+                } else
+                {
+                    this.current = default(T);
+                    return false;
+                }
+            }
+
+            public void Reset()
+            {
+                this.node = list.head;
+                this.current = default(T);
+            }
         }
     }
 }
