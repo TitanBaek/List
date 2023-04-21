@@ -11,7 +11,7 @@
 
         static void Test()
         {
-            Queue<int> queue = new Queue<int>();
+            System.Collections.Generic.Queue<int> queue = new System.Collections.Generic.Queue<int>();
 
             for (int i = 1; i <= 10; i++) { queue.Enqueue(i); }                     // .Enqueue 로 값 넣기
 
