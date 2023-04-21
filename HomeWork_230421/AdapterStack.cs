@@ -9,6 +9,7 @@ namespace HomeWork_230421
     internal class AdapterStack<T>
     {
         private List<T> container;                                          // Stack 구현에 사용될 List                      
+        public int Count { get {  return container.Count; } }
 
         public AdapterStack()                                               // AdapterStack 생성자
         {
