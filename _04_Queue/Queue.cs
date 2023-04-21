@@ -95,7 +95,5 @@ namespace _04_Queue
             }
             array = newArray;
         }
-
-
     }
 }
