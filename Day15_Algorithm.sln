@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_02_LinkedList", "_02_Linke
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230419", "HomeWork_230419\HomeWork_230419.csproj", "{C12A79E3-D9E4-4F75-801D-ED141D50427D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03_Iterator", "_03_Iterator\_03_Iterator.csproj", "{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_03_Iterator", "_03_Iterator\_03_Iterator.csproj", "{32E8E4B1-9846-4959-AEE6-3F0DFD1928BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_230420", "HomeWork_230420\HomeWork_230420.csproj", "{D60F8A86-D885-4169-AF24-277EA6A4A043}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230420", "HomeWork_230420\HomeWork_230420.csproj", "{D60F8A86-D885-4169-AF24-277EA6A4A043}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_04_Stack", "_04_Stack\_04_Stack.csproj", "{01D76D44-934B-445D-BAC5-4BB86713B7CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D60F8A86-D885-4169-AF24-277EA6A4A043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D60F8A86-D885-4169-AF24-277EA6A4A043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D60F8A86-D885-4169-AF24-277EA6A4A043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D76D44-934B-445D-BAC5-4BB86713B7CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D76D44-934B-445D-BAC5-4BB86713B7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D76D44-934B-445D-BAC5-4BB86713B7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D76D44-934B-445D-BAC5-4BB86713B7CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
