@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            HomeWork_230421.AdapterStack<int> myStack = new AdapterStack<int>();
+            // Adapter Stack 
+            HomeWork_230421.AdapterStack<int> myStack = new HomeWork_230421.AdapterStack<int>();
 
             for(int i = 1 ; i <= 10; i++)
             {
@@ -16,6 +17,7 @@
                 Console.WriteLine(myStack.Pop()) ;
             }
 
+            // Queue
 
 
         }
