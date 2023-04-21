@@ -15,6 +15,12 @@
 
             for (int i = 1; i <= 10; i++) { queue.Enqueue(i); }                     // .Enqueue 로 값 넣기
 
+            Console.WriteLine("Pick:");
+            Console.WriteLine(queue.Peek());                                        // 최전방의 데이터 Peek으로 확인하기
+
+            Console.WriteLine();
+
+            Console.WriteLine("While_Dequeue:");
             while (queue.Count > 0)
             {
                 Console.WriteLine(queue.Dequeue());                                 // .Dequeue 로 값을 확인
