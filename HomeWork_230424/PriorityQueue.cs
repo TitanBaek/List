@@ -44,7 +44,7 @@ namespace DataStructure
                 }
                 else
                 {
-                    break;
+                    break;                                                                  // 자식 값이 없다.. Break
                 }
             }
         }
@@ -70,7 +70,6 @@ namespace DataStructure
                 } else if(leftChildIndex < nodes.Count)                                     // 좌측 자식만 있는 경우, Heap Tree에서는 '우측 트리만 존재'하는 경우는 없음
                 {
                     lessChildIndex = leftChildIndex;
-
                 }
                 else                                                                        // 자녀가 없습니다..
                 {
@@ -82,6 +81,9 @@ namespace DataStructure
                     nodes[index] = nodes[lessChildIndex];                                   // Nodes 리스트의 현 인덱스 자리에 자식인덱스의 Node를 넣고
                     nodes[lessChildIndex] = lastNode;                                       // 자식인덱스 자리의 노드에 LastNode(
                     index = lessChildIndex;                                                 // index 를 현 자식 인덱스로 교체
+                } else
+                {
+                    break;
                 }
             }
             return result;
