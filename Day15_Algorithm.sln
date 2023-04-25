@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_04_Queue", "_04_Queue\_04_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230421", "HomeWork_230421\HomeWork_230421.csproj", "{B33F6407-1C37-4FC3-8D7A-169F17D3BF41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_06_Heap", "_06_Heap\_06_Heap.csproj", "{320350B3-984D-4150-8AFA-4DAC2F05DABD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_06_Heap", "_06_Heap\_06_Heap.csproj", "{320350B3-984D-4150-8AFA-4DAC2F05DABD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_230424", "HomeWork_230424\HomeWork_230424.csproj", "{59C7E147-3299-49E9-BC8F-73D763837B89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230424", "HomeWork_230424\HomeWork_230424.csproj", "{59C7E147-3299-49E9-BC8F-73D763837B89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_07_BinarySearchTree", "_07_BinarySearchTree\_07_BinarySearchTree.csproj", "{D49CB3B0-658E-4485-B083-A4A24DE2099A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{59C7E147-3299-49E9-BC8F-73D763837B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59C7E147-3299-49E9-BC8F-73D763837B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59C7E147-3299-49E9-BC8F-73D763837B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D49CB3B0-658E-4485-B083-A4A24DE2099A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D49CB3B0-658E-4485-B083-A4A24DE2099A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D49CB3B0-658E-4485-B083-A4A24DE2099A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D49CB3B0-658E-4485-B083-A4A24DE2099A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
