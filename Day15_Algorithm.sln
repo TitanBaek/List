@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230425", "HomeWork
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_08_HashTable", "_08_HashTable\_08_HashTable.csproj", "{2BF6429E-3342-475E-AD00-8D28AA7C2B0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_230426", "HomeWork_230426\HomeWork_230426.csproj", "{323EE758-9722-4BA4-8171-D29E6380BC83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{2BF6429E-3342-475E-AD00-8D28AA7C2B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BF6429E-3342-475E-AD00-8D28AA7C2B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BF6429E-3342-475E-AD00-8D28AA7C2B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323EE758-9722-4BA4-8171-D29E6380BC83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323EE758-9722-4BA4-8171-D29E6380BC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323EE758-9722-4BA4-8171-D29E6380BC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323EE758-9722-4BA4-8171-D29E6380BC83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
