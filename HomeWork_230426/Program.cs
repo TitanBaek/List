@@ -11,7 +11,7 @@
             myDictionary.Add("시작보조무기", "나무방패");
 
             Console.WriteLine(myDictionary["시작무기"]);
-
+             
 
             if (myDictionary.Remove("시작무기"))
             {
