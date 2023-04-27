@@ -9,7 +9,6 @@ namespace DataStructure
 
 
     // 남은 과제
-    // 주석 달기
     // 해싱과 해시함수에 대한 조사 (해시의 원리와 해싱함수의 효율 등등
     // 해시테이블의 충돌과 충돌해결 방안
 
@@ -19,28 +18,28 @@ namespace DataStructure
         public const int DefaultCapacity = 1000;                        // 초기 테이블 크기 (1000)
         public struct Entry                                             // index에 담길 데이터들을 묶은 구조체
         {
-            public enum State { None,Using,Deleted }                    // 
-            public State state;                                         // 해당 인덱스의 상태를 나타내는 변수
+            public enum State { None,Using,Deleted }                    
+            public State state;                                         // 해당 인덱스의 상태를 나타내는 열거형 변수
             public int hashCode;                                        // 데이터의 키 값을 해싱한 해시코드를 담는 변수
             public TKey key;                                            // 데이터의 키 값을 담는 변수
             public TValue value;                                        // 데이터를 담는 변수
         }
-        public Entry[] table;                                            // Entry들이 담길 테이블
+        public Entry[] table;                                            // Entry들이 담길 배열
         public Dictionary() { 
 
-            this.table = new Entry[DefaultCapacity];
+            this.table = new Entry[DefaultCapacity];                    // 딕셔너리 생성 시 DefaultCapacity 크기의 배열을 생성
         }
 
         public TValue this[TKey key]
         {
-            get
-            {
-                int foundIndex = FindIndex(key);
+            get                                                         // Getter 와 Setter
+            {                                                           // FindIndex를 호출하여 key 값으로 Index를 받은 후
+                int foundIndex = FindIndex(key);                        // Key와 FindIndex가 반환한 Index 자리의 key가 같은지 확인 후
                 if (key.Equals(table[foundIndex].key)){
-                    return table[foundIndex].value;
+                    return table[foundIndex].value;                     // 같은 key 값이라면 value를 return
                 } else
                 {
-                    throw new InvalidOperationException();
+                    throw new InvalidOperationException();              // 아니라면 예외상황 발생
                 }
             }
             set
@@ -48,18 +47,18 @@ namespace DataStructure
                 int foundIndex = FindIndex(key);
                 if (key.Equals(table[foundIndex].key))
                 {
-                   table[foundIndex].value = value;
+                   table[foundIndex].value = value;                     // Getter와 동일하나 같은 key 값이라면 index의 value를 value로 바꿔줌
                 }
                 else
                 {
-                    throw new InvalidOperationException();
+                    throw new InvalidOperationException();              // 같은 key 값이 아닐 시 예외상황 발생
                 }
             }
         }
 
         public void Add(TKey key, TValue value)
         {
-            int index = GetIndex(key);                                  // key 값을 해싱하여 index로 반환받는 함수 호출
+            int index = GetIndex(key);                                  // key 값을 해싱하여 index를 반환해주는 함수 호출
 
 
             while (table[index].state == Entry.State.Using) {           // 해싱된 index의 위치에 값이 있는 경우 반복문을 통해 값이 들어갈 index의 위치를 증감해줌
@@ -74,23 +73,24 @@ namespace DataStructure
                 }            
             }
 
-            table[index].hashCode = key.GetHashCode();
+            // table의 index 위치에 key 값과 value 등의 데이터를 저장하고 state를 using 으로 바꿔줌
+            table[index].hashCode = key.GetHashCode();                  
             table[index].key = key;
             table[index].value = value;
             table[index].state = Entry.State.Using;
         }
 
-        public bool Remove(TKey key)
+        public bool Remove(TKey key)                                    // 테이블 내의 데이터를 deleted 해주는 Remove 함수
         {
-            int foundIndex = FindIndex(key);
+            int foundIndex = FindIndex(key);                            // key 값을 해싱하여 index를 반환해주는 함수 호출
 
             if (key.Equals(table[foundIndex].key))                      // 굳이 여기서도 key 값을 비교해주는 이유는 FindTable에서 
-            {
-                table[foundIndex].state = Entry.State.Deleted;
+            {                                                           // 전달 받는 index가 같은 key 값을 가진 index가 아닐 수 있기 때문...
+                table[foundIndex].state = Entry.State.Deleted;          // Deleted로 state 를 바꾸고 true 반환
                 return true;
             } else
             {
-                return false;
+                return false;                                           // 일치하는 key가 테이블에 존재하지 않음 false 반환
             }
         }
 
