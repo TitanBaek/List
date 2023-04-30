@@ -88,13 +88,18 @@
 
         // <합병정렬>
         // 데이터를 2분할하여 정렬 후 합병
+        // 처음엔 시작 index와 끝 index를 매개변수로 전달 받음
+
+        // 8개 크기의 리스트를 전달 받고
+        // 매개변수로 left = 0
+        //           right = 7 을 전달 받으면
         public static void MergeSort(IList<int> list, int left, int right)
         {
-            if (left == right) return;
+            if (left == right) return;  // left 와 right 가 같으면 Return
 
-            int mid = (left + right) / 2;
-            MergeSort(list, left, mid);
-            MergeSort(list, mid + 1, right);
+            int mid = (left + right) / 2;       // left 와 right를 더해 나누기 2를 하면 중간값을 얻을 수 있음
+            MergeSort(list, left, mid);         // [1] left와 중간 값으로 재귀호출 0 / 3 [2] 0 / 1  [3] 0 / 0
+            MergeSort(list, mid + 1, right);    // [4] 2 / 7 
             Merge(list, left, mid, right);
         }
 
@@ -171,7 +176,7 @@
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine(1/2);
         }
     }
 }
