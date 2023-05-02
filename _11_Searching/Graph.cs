@@ -47,7 +47,7 @@ namespace _11_Searching
             { true, false, false, false, true },
             { true, true, false, true, false }
         };
-
+         
         // 인접 행렬 가중치 그래프
         const int INF = int.MaxValue;
         static int[,] matrixGraph2 = new int[5, 5]

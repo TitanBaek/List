@@ -103,7 +103,7 @@ namespace _11_Searching
         {
             visited = new bool[graph.GetLength(0)]; // 1차 배열 크기
             parents = new int[graph.GetLength(0)];
-
+             
             for (int i = 0; i < graph.GetLength(0); i++)     // 초기화 과정
             {
                 visited[i] = false;
