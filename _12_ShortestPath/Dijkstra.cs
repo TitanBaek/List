@@ -28,8 +28,8 @@ namespace _12_ShortestPath
 
 			for(int i = 0; i < size; i++)
 			{
-				distance[i] = INF;				// 거리
-				path[i] = -1;					// path(부모)
+				distance[i] = graph[start, i];				// 거리
+				path[i] = graph[start,i] < INF ? start : -1;					// path(부모)
 			}
 
 			for(int i = 0; i < size; i++)
@@ -47,7 +47,7 @@ namespace _12_ShortestPath
 				}
 
                 if (next < 0)
-                    break;
+                    break; 
 
                 // 2. 직접연결된 거리보다 거쳐서 더 짧아진다면 갱신
                 for (int j = 0; j < size; j++)
