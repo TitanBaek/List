@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_11_Searching", "_11_Search
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_12_ShortestPath", "_12_ShortestPath\_12_ShortestPath.csproj", "{01D3DF6E-C15C-4E7C-AC36-1D8191D377E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_230502", "HomeWork_230502\HomeWork_230502.csproj", "{4E61B08E-5797-4D22-8F88-F8F2DEECEFC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230502", "HomeWork_230502\HomeWork_230502.csproj", "{4E61B08E-5797-4D22-8F88-F8F2DEECEFC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_13_PathFinding", "_13_PathFinding\_13_PathFinding.csproj", "{6B64856D-4853-4E41-8187-6F675ADC9FCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +149,10 @@ Global
 		{4E61B08E-5797-4D22-8F88-F8F2DEECEFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E61B08E-5797-4D22-8F88-F8F2DEECEFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E61B08E-5797-4D22-8F88-F8F2DEECEFC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B64856D-4853-4E41-8187-6F675ADC9FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B64856D-4853-4E41-8187-6F675ADC9FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B64856D-4853-4E41-8187-6F675ADC9FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B64856D-4853-4E41-8187-6F675ADC9FCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
