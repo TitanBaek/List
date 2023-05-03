@@ -6,21 +6,23 @@ namespace _13_PathFinding
     {
         static void Main(string[] args)
         {
-            bool[,] tileMap = new bool[9, 9]
+            bool[,] tileMap = new bool[11, 10]
             {
-                { false, false, false, false, false, false, false, false, false },
-                { false,  true,  true,  true, false, false, false,  true, false },
-                { false,  false, false,  true, false, false, false,  true, false },
-                { false,  true, true,  true,  true,  true,  true,  true, false },
-                { false,  true, false,  true, false, true, false,  true, false },
-                { false,  true, false,  true, false, true, false,  true, false },
-                { false, false, false, false, false, true, false,  true, false },
-                { false,  true,  true,  true,  true,  true,  true,  true, false },
-                { false, false, false, false, false, false, false, false, false },
+                { false, false, false, false, false, false, false, false, false, false },
+                { false, true, true, true, true, true, true, true, true, false },
+                { false, true, true, true, true, true, true, true, true, false },
+                { false, true, true, true, true, true, true, true, true, false },
+                { false, true, true, true, true, true, true, true, true, false },
+                { false, true, false, false, false, false, false, false, true, false },
+                { false, true, true, true, true, true, true, false, true, false },
+                { false, true, true, true, true, true, true, true, true, false },
+                { false, true, true, true, true, true, true, true, true, false },
+                { false, true, true, true, true, true, true, true, true, false },
+                { false, false, false, false, false, false, false, false, false, false },
             };
             List<Position> path;
 
-            Astar.PathFinding(tileMap, new Position(1, 1), new Position(1, 7), out path);
+            Astar.PathFinding(tileMap, new Position(2, 3), new Position(6, 7), out path);
             PrintResult(tileMap, path);
         }
 

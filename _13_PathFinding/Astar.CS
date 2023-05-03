@@ -45,10 +45,12 @@ namespace _13_PathFinding
 			new Position(  0, -1 ),			// 하
 			new Position( -1,  0 ),			// 좌
 			new Position( +1,  0 ),			// 우
+			/*
 			new Position( -1, +1 ),		    // 좌상
 			new Position( -1, -1 ),		    // 좌하
 			new Position( +1, +1 ),		    // 우상
 			new Position( +1, -1 ),		    // 우하
+			*/
 		};
 
 
@@ -115,8 +117,9 @@ namespace _13_PathFinding
 					}
 
 					// 4-2 점수 계산
-					int g = nextNode.g + ((nextNode.pos.x == x || nextNode.pos.y == y) ? CostStraight : CostDiagonal);
-					int h = Heuristic(new Position(x, y), end);
+					//int g = nextNode.g + ((nextNode.pos.x == x || nextNode.pos.y == y) ? CostStraight : CostDiagonal);
+					int g = nextNode.g + 10;
+                    int h = Heuristic(new Position(x, y), end);
 					ASNode newNode = new ASNode(new Position(x, y), nextNode.pos, g, h);
 
 					// 4-3 정점의 갱신이 필요한 경우만 새로운 정점으로 할당해줘야함
