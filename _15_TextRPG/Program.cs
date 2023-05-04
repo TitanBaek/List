@@ -2,16 +2,14 @@
 {
     internal class Program
     {
+        /// <summary>
+        /// Main은 수정 X
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
-            Console.Beep();
+            Game game = new Game();         // 시작은 이렇게..
+            game.Run();                     // Run() 호출
         }
     }
 }
