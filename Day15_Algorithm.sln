@@ -49,9 +49,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_12_ShortestPath", "_12_Sho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_230502", "HomeWork_230502\HomeWork_230502.csproj", "{4E61B08E-5797-4D22-8F88-F8F2DEECEFC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_13_PathFinding", "_13_PathFinding\_13_PathFinding.csproj", "{6B64856D-4853-4E41-8187-6F675ADC9FCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_13_PathFinding", "_13_PathFinding\_13_PathFinding.csproj", "{6B64856D-4853-4E41-8187-6F675ADC9FCF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_230503", "HomeWork_230503\HomeWork_230503.csproj", "{76916099-D87B-40C4-B6A8-C758F10C9E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_15_TextRPG", "_15_TextRPG\_15_TextRPG.csproj", "{1DE1413F-BB4C-4AB0-863E-8C02A198C47E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{76916099-D87B-40C4-B6A8-C758F10C9E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76916099-D87B-40C4-B6A8-C758F10C9E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76916099-D87B-40C4-B6A8-C758F10C9E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE1413F-BB4C-4AB0-863E-8C02A198C47E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE1413F-BB4C-4AB0-863E-8C02A198C47E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE1413F-BB4C-4AB0-863E-8C02A198C47E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE1413F-BB4C-4AB0-863E-8C02A198C47E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
