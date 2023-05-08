@@ -13,6 +13,7 @@ namespace Project_TRPG
 
         public override void Render()
         {
+            Console.WriteLine($"현재 장소: {Data.stages[Data.player.pos.x,Data.player.pos.y].name}");
             Console.WriteLine($"{Data.player.name}({Data.player.job})");
         }
 

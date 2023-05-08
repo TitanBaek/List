@@ -102,7 +102,7 @@ namespace Project_TRPG
             job = (Job)int.Parse(Console.ReadLine()) - 1;
 
             Data.Init(name, job);
-
+            Data.LoadStages();
             scene = stageScene;
         }
 
