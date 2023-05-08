@@ -20,7 +20,7 @@ namespace Project_TRPG
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.BackgroundColor = ConsoleColor.White;
                 sb.AppendLine("게 임 시 작");
-                Console.WriteLine(sb.ToString());
+                Console.Write(sb.ToString());
                 sb.Clear();
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -31,7 +31,7 @@ namespace Project_TRPG
             else if (chooseInt == 2)
             {
                 sb.AppendLine("게 임 시 작");
-                Console.WriteLine(sb.ToString());
+                Console.Write(sb.ToString());
                 sb.Clear();
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.BackgroundColor = ConsoleColor.White;

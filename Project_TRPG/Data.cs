@@ -31,7 +31,7 @@ namespace Project_TRPG
                 { null, null,        null,       null,       null}
             };
 
-            player.pos = new Position(3, 1);
+            player.pos = new Position(1, 3);
         }
 
     }

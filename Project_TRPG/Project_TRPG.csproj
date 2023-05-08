@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Map\" />
+    <Compile Remove="Map\**" />
+    <EmbeddedResource Remove="Map\**" />
+    <None Remove="Map\**" />
   </ItemGroup>
 
 </Project>
