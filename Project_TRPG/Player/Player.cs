@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project_TRPG
 {
-    public enum Job {무직,회사원,군인,학생,등산애호가 };
+    public enum Job { 무직, 회사원, 군인, 학생, 등산애호가 };
     public class Player
     {
         public string name;
@@ -17,15 +17,25 @@ namespace Project_TRPG
         public Dictionary<EquipType, Equip> playerEquip;
         public Inventory inventory;
         private int level;
+        public int Level { get { return this.level; } }
         private int exp;
+        public int Exp { get { return this.exp; } }
         private float exp_cal;
+        public int Exp_cal { get { return (this.level * 100) * (int)this.exp_cal; } }
         private int hp;
+        public int Hp { get { return this.hp; } }
         private int max_hp;
+        public int Max_hp { get {  return this.max_hp; } }
         private int sp;
+        public int Sp { get { return this.sp; } }
         private int max_sp;
+        public int Max_sp { get { return this.max_sp; } }
         private int ap;
+        public int Ap { get { return this.ap; } }
         private int dp;
+        public int Dp { get { return this.dp; } }
         private int luck;
+        public int Luck { get { return this.luck; } }
 
         public Player(string name,Job job)
         {
